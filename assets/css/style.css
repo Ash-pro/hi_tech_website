@@ -1,0 +1,99 @@
+/* Hazem Tech - Global Styles, Responsive Typography, Theme & Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-primary: #00d2ff;
+  --color-primary-dark: #0066ff;
+  --color-accent: #7928ca;
+}
+
+/* Typography handling */
+html[lang="ar"] body {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  letter-spacing: normal !important;
+  word-spacing: normal;
+}
+
+html[lang="en"] body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Hero Typography Enhancement: smooth, natural flow without cramped words */
+.hero-title-text {
+  line-height: 1.32 !important;
+  word-spacing: 0.05em;
+  letter-spacing: 0 !important;
+}
+
+html[lang="en"] .hero-title-text {
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #06080f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d2ff;
+}
+
+/* Theme Smooth Transitions */
+body, header, section, footer, div, a, button, input, textarea, select {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Glow effects for dark mode */
+.dark .glow-cyan {
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+}
+
+.dark .glow-purple {
+  box-shadow: 0 0 30px rgba(121, 40, 202, 0.2);
+}
+
+.glow-cyan-light {
+  box-shadow: 0 10px 25px -5px rgba(0, 210, 255, 0.15), 0 8px 10px -6px rgba(0, 102, 255, 0.1);
+}
+
+/* Glassmorphism */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(18, 24, 41, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Smooth transition for logo switch */
+#heroLogoImage {
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+#heroLogoImage.fade-out {
+  opacity: 0;
+  transform: scale(0.94);
+}
