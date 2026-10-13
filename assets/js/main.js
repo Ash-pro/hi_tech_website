@@ -118,20 +118,64 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
 
   // ==========================================
-  // 3. MOBILE MENU TOGGLE
+  // 3. MOBILE MENU TOGGLE WITH ANIMATION
   // ==========================================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('is-open');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    if (mobileMenuIcon) {
+      mobileMenuIcon.className = 'fa-solid fa-bars text-base sm:text-lg';
+    }
+  }
+
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('is-open');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    if (mobileMenuIcon) {
+      mobileMenuIcon.className = 'fa-solid fa-xmark text-base sm:text-lg';
+    }
+  }
 
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        closeMobileMenu();
       });
+    });
+
+    // Close when tapping outside header/menu
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Close when resizing back to desktop width
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1280) closeMobileMenu();
     });
   }
 

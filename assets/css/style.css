@@ -1,4 +1,4 @@
-/* Hazem Tech - Global Styles, Responsive Typography, Theme & Layout */
+/* Hi Tech (هاي تك) - Global Styles, Responsive Typography, Theme & Layout */
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -6,6 +6,24 @@
   --color-primary: #00d2ff;
   --color-primary-dark: #0066ff;
   --color-accent: #7928ca;
+}
+
+/* Global Reset & Responsive Boundaries */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* Typography handling */
@@ -22,18 +40,20 @@ html[lang="en"] body {
 /* Hero Typography Enhancement: smooth, natural flow without cramped words */
 .hero-title-text {
   line-height: 1.32 !important;
-  word-spacing: 0.05em;
+  word-spacing: 0.04em;
   letter-spacing: 0 !important;
+  word-break: break-word;
 }
 
 html[lang="en"] .hero-title-text {
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
+  word-break: normal;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -75,14 +95,14 @@ body, header, section, footer, div, a, button, input, textarea, select {
 
 /* Glassmorphism */
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .glass-panel-dark {
-  background: rgba(18, 24, 41, 0.85);
+  background: rgba(18, 24, 41, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -91,9 +111,66 @@ body, header, section, footer, div, a, button, input, textarea, select {
 /* Smooth transition for logo switch */
 #heroLogoImage {
   transition: opacity 0.3s ease, transform 0.4s ease;
+  will-change: opacity, transform;
 }
 
 #heroLogoImage.fade-out {
   opacity: 0;
-  transform: scale(0.94);
+  transform: scale(0.95);
+}
+
+/* Mobile Dropdown Animation */
+#mobileMenu {
+  transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#mobileMenu.is-open {
+  display: block !important;
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating WhatsApp Pulse Animation */
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.wa-pulse {
+  animation: pulseRing 2.2s infinite;
+}
+
+/* Prevent iOS Zoom on Input Focus (<16px text triggers auto-zoom in Safari) */
+@media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch Friendly Targets */
+@media (hover: none) and (pointer: coarse) {
+  .lang-toggle-btn, .theme-toggle-btn, #mobileMenuBtn {
+    min-height: 42px;
+    min-width: 42px;
+  }
 }

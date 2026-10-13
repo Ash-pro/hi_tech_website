@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>هاي تك | Hi Tech - للخدمات الجامعية ومشاريع التخرج والتدريس</title>
   <meta name="description" content="مركز هاي تك - شريكك الأكاديمي والتقني: تدريس مواد جامعية، إعداد وتطوير مشاريع التخرج، حلول الأنشطة والواجبات، والأبحاث الأكاديمية.">
   
@@ -39,6 +39,9 @@
       darkMode: 'class',
       theme: {
         extend: {
+          screens: {
+            'xs': '420px'
+          },
           fontFamily: {
             cairo: ['Cairo', 'sans-serif'],
             sans: ['Plus Jakarta Sans', 'Cairo', 'sans-serif'],
@@ -64,16 +67,16 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 dark:bg-brand-darker text-slate-800 dark:text-slate-100 min-h-screen selection:bg-brand-cyan selection:text-brand-dark tracking-normal">
+<body class="bg-slate-50 dark:bg-brand-darker text-slate-800 dark:text-slate-100 min-h-screen selection:bg-brand-cyan selection:text-brand-dark tracking-normal overflow-x-hidden">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan text-white text-xs md:text-sm py-2 px-4 shadow-sm">
+  <div class="bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan text-white text-[11px] sm:text-xs md:text-sm py-1.5 sm:py-2 px-3 sm:px-4 shadow-sm">
     <div class="container mx-auto flex items-center justify-between flex-wrap gap-2">
-      <div class="flex items-center gap-2 mx-auto md:mx-0">
-        <span class="inline-flex items-center justify-center bg-white/20 text-white rounded-full px-2.5 py-0.5 text-xs font-bold animate-pulse">
+      <div class="flex items-center gap-1.5 sm:gap-2 mx-auto md:mx-0 text-center md:text-start">
+        <span class="inline-flex items-center justify-center bg-white/20 text-white rounded-full px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-xs font-bold animate-pulse shrink-0">
           <i class="fa-solid fa-graduation-cap ml-1 mr-1"></i> <span data-i18n="top_badge">خصومات الفصل الدراسي</span>
         </span>
-        <span data-i18n="top_discount">خصم خاص لمجموعات مشاريع التخرج والأنشطة والتدريس الجامعي!</span>
+        <span data-i18n="top_discount" class="line-clamp-1 sm:line-clamp-none">خصم خاص لمجموعات مشاريع التخرج والأنشطة والتدريس الجامعي!</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-xs font-semibold">
         <span><i class="fa-solid fa-clock ml-1 mr-1"></i> <span data-i18n="top_hours">متاحون 24/7 لخدمتكم</span></span>
@@ -87,24 +90,24 @@
   </div>
 
   <!-- Header / Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/85 dark:bg-brand-dark/85 border-b border-slate-200 dark:border-brand-borderDark shadow-sm">
-    <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/90 dark:bg-brand-dark/90 border-b border-slate-200 dark:border-brand-borderDark shadow-sm">
+    <div class="container mx-auto px-3 sm:px-4 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group shrink-0">
-        <div class="relative w-12 h-12 rounded-xl overflow-hidden shadow-md shadow-brand-cyan/20 border border-brand-cyan/40 group-hover:scale-105 transition-transform">
-          <img src="assets/images/logo_v1.jpg" alt="Hi Tech Logo" class="w-full h-full object-cover">
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-md shadow-brand-cyan/20 border border-brand-cyan/40 group-hover:scale-105 transition-transform shrink-0">
+          <img src="assets/images/logo_v1.jpg" alt="Hi Tech Logo" width="48" height="48" fetchpriority="high" class="w-full h-full object-cover">
         </div>
         <div>
-          <span data-i18n="brand_name" class="text-2xl font-black tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-blue-500 to-purple-600 dark:to-purple-400">
+          <span data-i18n="brand_name" class="text-xl sm:text-2xl font-black tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-blue-500 to-purple-600 dark:to-purple-400 block leading-tight">
             هاي تك
           </span>
-          <span data-i18n="brand_sub" class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400">HI TECH • خدمات جامعية وتدريس ومشاريع</span>
+          <span data-i18n="brand_sub" class="hidden sm:block text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400 leading-tight">HI TECH • خدمات جامعية وتدريس ومشاريع</span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden xl:flex items-center gap-7 font-bold text-sm text-slate-600 dark:text-slate-300">
+      <nav class="hidden xl:flex items-center gap-6 lg:gap-7 font-bold text-sm text-slate-600 dark:text-slate-300">
         <a href="#home" data-i18n="nav_home" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors text-brand-blue dark:text-brand-cyan">الرئيسية</a>
         <a href="#services" data-i18n="nav_services" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors">خدماتنا</a>
         <a href="#projects" data-i18n="nav_projects" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors">مشاريع التخرج</a>
@@ -113,160 +116,169 @@
         <a href="#faq" data-i18n="nav_faq" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors">الأسئلة الشائعة</a>
       </nav>
 
-      <!-- Action Controls (Language + Theme + CTA) -->
-      <div class="flex items-center gap-2.5">
+      <!-- Action Controls (Language + Theme + CTA + Mobile Toggle) -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         
         <!-- Language Switcher Button -->
-        <button class="lang-toggle-btn px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-200 dark:border-brand-borderDark text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 transition-colors shadow-sm" title="Change Language / تغيير اللغة">
-          <i class="fa-solid fa-globe text-brand-blue dark:text-brand-cyan text-sm"></i>
+        <button class="lang-toggle-btn px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-200 dark:border-brand-borderDark text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 sm:gap-1.5 transition-colors shadow-sm" title="Change Language / تغيير اللغة" aria-label="Toggle Language">
+          <i class="fa-solid fa-globe text-brand-blue dark:text-brand-cyan text-xs sm:text-sm"></i>
           <span class="lang-label">English</span>
         </button>
 
         <!-- Dark/Light Theme Switcher Button -->
-        <button class="theme-toggle-btn w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-200 dark:border-brand-borderDark flex items-center justify-center transition-colors shadow-sm text-base" data-i18n-title="theme_toggle_title" title="تبديل المظهر">
+        <button class="theme-toggle-btn w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-200 dark:border-brand-borderDark flex items-center justify-center transition-colors shadow-sm text-sm sm:text-base" data-i18n-title="theme_toggle_title" title="تبديل المظهر" aria-label="Toggle Theme">
           <i class="fa-solid fa-sun text-amber-400"></i>
         </button>
 
-        <!-- Order CTA Button -->
-        <a href="#order-now" class="hidden sm:inline-flex relative group overflow-hidden rounded-xl p-px font-bold text-sm shadow-sm">
+        <!-- Order CTA Button (Desktop & Large Screens) -->
+        <a href="#order-now" class="hidden lg:inline-flex relative group overflow-hidden rounded-xl p-px font-bold text-xs sm:text-sm shadow-sm shrink-0">
           <span class="absolute inset-0 bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple"></span>
-          <span class="relative block px-4 py-2.5 rounded-[11px] bg-white dark:bg-brand-dark hover:bg-opacity-90 dark:hover:bg-opacity-90 text-slate-900 dark:text-white transition-all flex items-center gap-2">
+          <span class="relative block px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-[11px] bg-white dark:bg-brand-dark hover:bg-opacity-90 dark:hover:bg-opacity-90 text-slate-900 dark:text-white transition-all flex items-center gap-1.5 sm:gap-2">
             <i class="fa-solid fa-paper-plane text-brand-cyan text-xs"></i>
             <span data-i18n="nav_order_btn">اطلب خدمتك الآن</span>
           </span>
         </a>
 
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="xl:hidden text-slate-700 dark:text-slate-200 p-2.5 rounded-xl bg-slate-100 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark">
-          <i class="fa-solid fa-bars text-lg"></i>
+        <button id="mobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false" class="xl:hidden text-slate-700 dark:text-slate-200 p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 transition-colors">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-base sm:text-lg"></i>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="hidden xl:hidden border-b border-slate-200 dark:border-brand-borderDark bg-white/95 dark:bg-brand-cardDark/95 backdrop-blur-xl px-6 py-4 space-y-3 shadow-lg">
-      <a href="#home" data-i18n="nav_home" class="block py-2 text-brand-blue dark:text-brand-cyan font-bold">الرئيسية</a>
-      <a href="#services" data-i18n="nav_services" class="block py-2 text-slate-700 dark:text-slate-300 font-bold">خدماتنا</a>
-      <a href="#projects" data-i18n="nav_projects" class="block py-2 text-slate-700 dark:text-slate-300 font-bold">مشاريع التخرج</a>
-      <a href="#features" data-i18n="nav_features" class="block py-2 text-slate-700 dark:text-slate-300 font-bold">لماذا نحن؟</a>
-      <a href="#how-it-works" data-i18n="nav_workflow" class="block py-2 text-slate-700 dark:text-slate-300 font-bold">آلية العمل</a>
-      <a href="#faq" data-i18n="nav_faq" class="block py-2 text-slate-700 dark:text-slate-300 font-bold">الأسئلة الشائعة</a>
-      <a href="https://wa.me/972598383944" target="_blank" class="block py-2 text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-2">
-        <i class="fa-brands fa-whatsapp text-lg"></i> <span>تواصل عبر واتساب (+972 59-838-3944)</span>
-      </a>
+    <!-- Enhanced Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden xl:hidden border-b border-slate-200 dark:border-brand-borderDark bg-white/95 dark:bg-brand-cardDark/95 backdrop-blur-xl px-5 sm:px-6 py-4 space-y-3 shadow-xl">
+      <nav class="space-y-1 font-bold text-sm">
+        <a href="#home" data-i18n="nav_home" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-blue dark:text-brand-cyan flex items-center gap-2.5"><i class="fa-solid fa-house text-sm w-5"></i> <span>الرئيسية</span></a>
+        <a href="#services" data-i18n="nav_services" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center gap-2.5"><i class="fa-solid fa-shapes text-sm w-5"></i> <span>خدماتنا</span></a>
+        <a href="#projects" data-i18n="nav_projects" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center gap-2.5"><i class="fa-solid fa-graduation-cap text-sm w-5"></i> <span>مشاريع التخرج</span></a>
+        <a href="#features" data-i18n="nav_features" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center gap-2.5"><i class="fa-solid fa-star text-sm w-5"></i> <span>لماذا نحن؟</span></a>
+        <a href="#how-it-works" data-i18n="nav_workflow" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center gap-2.5"><i class="fa-solid fa-list-check text-sm w-5"></i> <span>آلية العمل</span></a>
+        <a href="#faq" data-i18n="nav_faq" class="block py-2.5 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center gap-2.5"><i class="fa-solid fa-circle-question text-sm w-5"></i> <span>الأسئلة الشائعة</span></a>
+      </nav>
+
+      <div class="pt-2 border-t border-slate-200 dark:border-brand-borderDark/80 space-y-2">
+        <a href="#order-now" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+          <span data-i18n="nav_order_btn">اطلب خدمتك الآن</span>
+        </a>
+        <a href="https://wa.me/972598383944" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-700/50 text-emerald-700 dark:text-emerald-400 font-bold text-xs flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> <span>تواصل عبر واتساب (+972 59-838-3944)</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section (Adjusted word spacing and line-height) -->
-  <section id="home" class="relative pt-12 pb-20 overflow-hidden">
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
     <!-- Ambient Background Lighting -->
-    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-brand-blue/15 dark:bg-brand-blue/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-48 left-10 w-80 h-80 bg-brand-purple/15 dark:bg-brand-purple/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-32 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-brand-blue/15 dark:bg-brand-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-48 left-10 w-64 sm:w-80 h-64 sm:h-80 bg-brand-purple/15 dark:bg-brand-purple/20 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="container mx-auto px-4 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Text Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-cyan/30 text-xs md:text-sm font-bold text-brand-blue dark:text-brand-cyan shadow-sm">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-start">
+          <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-cyan/30 text-xs sm:text-sm font-bold text-brand-blue dark:text-brand-cyan shadow-sm">
             <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
             <span data-i18n="hero_badge">الوجهة الأولى والأشمل لجميع طلاب الجامعات والمعاهد</span>
           </div>
 
-          <!-- Hero Main Title with perfect spacing -->
-          <h1 class="hero-title-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white">
+          <!-- Hero Main Title -->
+          <h1 class="hero-title-text text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white">
             <span data-i18n="hero_title_prefix">شريكك الأكاديمي والتقني</span> <br>
             <span data-i18n="hero_title_highlight" class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-blue-500 to-purple-600 dark:to-purple-400">
               من أول محاضرة حتى يوم التخرج
             </span>
           </h1>
 
-          <p data-i18n="hero_desc" class="text-slate-600 dark:text-slate-300 text-base md:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+          <p data-i18n="hero_desc" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
             في مركز هاي تك نقدم منظومة جامعية متكاملة: تدريس أكاديمي وشروحات مبسطة، إعداد وبرمجة وتوثيق مشاريع التخرج، حلول الأنشطة والتكاليف بدقة وأمانة علمية، وإعداد البحوث الرصينة لضمان أعلى الدرجات.
           </p>
 
-          <!-- Buttons CTA -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#order-now" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple text-white font-bold shadow-lg shadow-brand-blue/25 hover:shadow-brand-cyan/35 hover:scale-[1.02] transition-all flex items-center gap-2">
+          <!-- Buttons CTA (Full width on mobile, inline on sm+) -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
+            <a href="#order-now" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple text-white font-bold shadow-lg shadow-brand-blue/25 hover:shadow-brand-cyan/35 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
               <i class="fa-solid fa-bolt-lightning text-yellow-300"></i>
               <span data-i18n="hero_btn_order">طلب خدمة سريعة</span>
             </a>
             
-            <a href="https://wa.me/972598383944" target="_blank" class="px-7 py-3.5 rounded-xl bg-white hover:bg-slate-100 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold transition-all flex items-center gap-2 shadow-sm hover:text-emerald-500">
+            <a href="https://wa.me/972598383944" target="_blank" class="w-full sm:w-auto px-6 sm:px-7 py-3.5 rounded-xl bg-white hover:bg-slate-100 dark:bg-brand-cardDark dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold transition-all flex items-center justify-center gap-2 shadow-sm hover:text-emerald-500 text-sm sm:text-base">
               <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
               <span data-i18n="hero_btn_wa">محادثة واتساب مباشرة</span>
             </a>
           </div>
 
           <!-- Trust Badges -->
-          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200 dark:border-brand-borderDark/60 max-w-lg mx-auto lg:mx-0">
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-6 sm:pt-8 border-t border-slate-200 dark:border-brand-borderDark/60 max-w-lg mx-auto lg:mx-0">
             <div class="text-center lg:text-start">
-              <span data-i18n="hero_stat_projects_num" class="block text-2xl md:text-3xl font-black text-brand-blue dark:text-brand-cyan">+500</span>
-              <span data-i18n="hero_stat_projects_label" class="text-xs text-slate-500 dark:text-slate-400 font-medium">مشروع تخرج مكتمل</span>
+              <span data-i18n="hero_stat_projects_num" class="block text-xl sm:text-2xl md:text-3xl font-black text-brand-blue dark:text-brand-cyan">+500</span>
+              <span data-i18n="hero_stat_projects_label" class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">مشروع تخرج مكتمل</span>
             </div>
             <div class="text-center lg:text-start">
-              <span data-i18n="hero_stat_trust_num" class="block text-2xl md:text-3xl font-black text-purple-600 dark:text-purple-400">100%</span>
-              <span data-i18n="hero_stat_trust_label" class="text-xs text-slate-500 dark:text-slate-400 font-medium">أمانة علمية وتعديلات</span>
+              <span data-i18n="hero_stat_trust_num" class="block text-xl sm:text-2xl md:text-3xl font-black text-purple-600 dark:text-purple-400">100%</span>
+              <span data-i18n="hero_stat_trust_label" class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">أمانة علمية وتعديلات</span>
             </div>
             <div class="text-center lg:text-start">
-              <span data-i18n="hero_stat_students_num" class="block text-2xl md:text-3xl font-black text-blue-600 dark:text-blue-400">+1500</span>
-              <span data-i18n="hero_stat_students_label" class="text-xs text-slate-500 dark:text-slate-400 font-medium">طالب وطالبة مستفيد</span>
+              <span data-i18n="hero_stat_students_num" class="block text-xl sm:text-2xl md:text-3xl font-black text-blue-600 dark:text-blue-400">+1500</span>
+              <span data-i18n="hero_stat_students_label" class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">طالب وطالبة مستفيد</span>
             </div>
           </div>
         </div>
 
         <!-- Visual Hero Showcase Card -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md">
+        <div class="lg:col-span-5 relative flex justify-center w-full">
+          <div class="relative w-full max-w-sm sm:max-w-md">
             
             <!-- Glow Frame -->
             <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-brand-cyan via-brand-blue to-brand-purple opacity-30 dark:opacity-40 blur-xl animate-pulse"></div>
 
-            <div class="relative rounded-3xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 shadow-2xl backdrop-blur-xl">
+            <div class="relative rounded-3xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-4 sm:p-6 shadow-2xl backdrop-blur-xl">
               
               <!-- Card Header with Logo Toggle -->
-              <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-brand-borderDark mb-4">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-rose-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                  <span data-i18n="hero_identity_title" class="text-xs text-slate-500 dark:text-slate-400 font-bold mr-2 ml-2">هوية هاي تك</span>
+              <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-slate-200 dark:border-brand-borderDark mb-3 sm:mb-4">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                  <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-500"></span>
+                  <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500"></span>
+                  <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500"></span>
+                  <span data-i18n="hero_identity_title" class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold mr-1 sm:mr-2 ml-1 sm:ml-2">هوية هاي تك</span>
                 </div>
-                <span data-i18n="hero_verified_badge" class="text-xs px-2.5 py-1 rounded-full bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan font-bold border border-brand-cyan/30">
+                <span data-i18n="hero_verified_badge" class="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan font-bold border border-brand-cyan/30">
                   معتمد أكاديمياً
                 </span>
               </div>
 
               <!-- Logo Display Frame -->
               <div class="relative rounded-2xl overflow-hidden aspect-square border border-slate-200 dark:border-brand-borderDark group shadow-inner">
-                <img id="heroLogoImage" src="assets/images/logo_v1.jpg" alt="Hi Tech Logo Badge" class="w-full h-full object-cover">
+                <img id="heroLogoImage" src="assets/images/logo_v1.jpg" alt="Hi Tech Logo Badge" width="600" height="600" fetchpriority="high" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
                 
-                <div class="absolute bottom-4 right-4 left-4 flex items-center justify-between gap-2">
-                  <div class="bg-slate-900/90 text-white backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs">
+                <div class="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 left-3 sm:left-4 flex items-center justify-between gap-2">
+                  <div class="bg-slate-900/90 text-white backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/10 text-[10px] sm:text-xs truncate">
                     <span data-i18n="hero_caption" class="font-medium">هاي تك • ريادة في التعليم والحلول التقنية</span>
                   </div>
                   <!-- Switch Logo Button -->
-                  <button id="toggleLogoBtn" class="bg-brand-cyan text-brand-darker font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-white transition-colors flex items-center gap-1 shadow shrink-0">
-                    <i class="fa-solid fa-arrows-rotate"></i>
+                  <button id="toggleLogoBtn" class="bg-brand-cyan text-brand-darker font-bold text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg hover:bg-white transition-colors flex items-center gap-1 shadow shrink-0">
+                    <i class="fa-solid fa-arrows-rotate text-[10px] sm:text-xs"></i>
                     <span data-i18n="hero_switch_logo_btn">تبديل الشعار</span>
                   </button>
                 </div>
               </div>
 
               <!-- Quick Highlights Floating -->
-              <div class="mt-4 grid grid-cols-2 gap-3 text-xs">
-                <div class="p-3 rounded-xl bg-slate-50 dark:bg-brand-darker/60 border border-slate-200 dark:border-brand-borderDark flex items-center gap-2.5">
-                  <i class="fa-solid fa-code text-brand-blue dark:text-brand-cyan text-base shrink-0"></i>
+              <div class="mt-3 sm:mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs">
+                <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-brand-darker/60 border border-slate-200 dark:border-brand-borderDark flex items-center gap-2 sm:gap-2.5">
+                  <i class="fa-solid fa-code text-brand-blue dark:text-brand-cyan text-sm sm:text-base shrink-0"></i>
                   <div>
-                    <span data-i18n="hero_card_code" class="block font-bold text-slate-800 dark:text-slate-200">برمجة ومشاريع</span>
+                    <span data-i18n="hero_card_code" class="block font-bold text-slate-800 dark:text-slate-200 text-xs">برمجة ومشاريع</span>
                     <span data-i18n="hero_card_code_sub" class="text-slate-500 dark:text-slate-400 text-[10px]">كود نظيف + شرح تفصيلي</span>
                   </div>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-50 dark:bg-brand-darker/60 border border-slate-200 dark:border-brand-borderDark flex items-center gap-2.5">
-                  <i class="fa-solid fa-chalkboard-user text-purple-600 dark:text-purple-400 text-base shrink-0"></i>
+                <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-brand-darker/60 border border-slate-200 dark:border-brand-borderDark flex items-center gap-2 sm:gap-2.5">
+                  <i class="fa-solid fa-chalkboard-user text-purple-600 dark:text-purple-400 text-sm sm:text-base shrink-0"></i>
                   <div>
-                    <span data-i18n="hero_card_tutoring" class="block font-bold text-slate-800 dark:text-slate-200">تدريس وشروحات</span>
+                    <span data-i18n="hero_card_tutoring" class="block font-bold text-slate-800 dark:text-slate-200 text-xs">تدريس وشروحات</span>
                     <span data-i18n="hero_card_tutoring_sub" class="text-slate-500 dark:text-slate-400 text-[10px]">شرح متخصص + مراجعات</span>
                   </div>
                 </div>
@@ -281,46 +293,46 @@
   </section>
 
   <!-- Features Highlight Strip -->
-  <section id="features" class="py-12 bg-white dark:bg-brand-dark border-y border-slate-200 dark:border-brand-borderDark">
+  <section id="features" class="py-8 sm:py-12 bg-white dark:bg-brand-dark border-y border-slate-200 dark:border-brand-borderDark">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         
-        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-brand-cyan/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-brand-blue dark:text-brand-cyan flex items-center justify-center text-xl shrink-0">
+        <div class="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-brand-cyan/50 transition-colors">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-500/10 text-brand-blue dark:text-brand-cyan flex items-center justify-center text-lg sm:text-xl shrink-0">
             <i class="fa-solid fa-user-shield"></i>
           </div>
           <div>
-            <h4 data-i18n="feat_trust_title" class="font-bold text-base text-slate-900 dark:text-white mb-1">أمانة وسرية تامة</h4>
+            <h4 data-i18n="feat_trust_title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white mb-1">أمانة وسرية تامة</h4>
             <p data-i18n="feat_trust_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">خصوصية بياناتك الأكاديمية وأبحاثك محمية تماماً ولا يُعاد استخدامها أبداً.</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-purple-400/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl shrink-0">
+        <div class="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-purple-400/50 transition-colors">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg sm:text-xl shrink-0">
             <i class="fa-solid fa-clock-rotate-left"></i>
           </div>
           <div>
-            <h4 data-i18n="feat_time_title" class="font-bold text-base text-slate-900 dark:text-white mb-1">تسليم دقيق في الموعد</h4>
+            <h4 data-i18n="feat_time_title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white mb-1">تسليم دقيق في الموعد</h4>
             <p data-i18n="feat_time_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">نحترم مواعيد تقديم التكاليف وديدلاين الجامعات لضمان سلامة تقديمك.</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-emerald-500/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl shrink-0">
+        <div class="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-emerald-500/50 transition-colors">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg sm:text-xl shrink-0">
             <i class="fa-solid fa-arrow-rotate-forward"></i>
           </div>
           <div>
-            <h4 data-i18n="feat_rev_title" class="font-bold text-base text-slate-900 dark:text-white mb-1">تعديلات ومتابعة مستمرة</h4>
+            <h4 data-i18n="feat_rev_title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white mb-1">تعديلات ومتابعة مستمرة</h4>
             <p data-i18n="feat_rev_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">نظل معك خطوة بخطوة لتنفيذ أي ملاحظات من دكتور المادة أو لجنة المناقشة.</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-amber-500/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
+        <div class="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-brand-cardDark/50 border border-slate-200 dark:border-brand-borderDark hover:border-amber-500/50 transition-colors">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg sm:text-xl shrink-0">
             <i class="fa-solid fa-tags"></i>
           </div>
           <div>
-            <h4 data-i18n="feat_price_title" class="font-bold text-base text-slate-900 dark:text-white mb-1">أسعار مناسبة للطلاب</h4>
+            <h4 data-i18n="feat_price_title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white mb-1">أسعار مناسبة للطلاب</h4>
             <p data-i18n="feat_price_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">باقات أسعار خاصة تراعي ميزانية الطالب مع خطط دفع مرنة لمشاريع التخرج.</p>
           </div>
         </div>
@@ -330,27 +342,29 @@
   </section>
 
   <!-- Comprehensive Services Section -->
-  <section id="services" class="py-20 relative">
+  <section id="services" class="py-12 sm:py-16 md:py-20 relative">
     <div class="container mx-auto px-4 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span data-i18n="serv_tag" class="text-brand-blue dark:text-brand-cyan text-sm font-bold uppercase tracking-wider">خدماتنا الشاملة</span>
-        <h2 data-i18n="serv_title" class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">كل ما يحتاجه مسارك الجامعي في مكان واحد</h2>
-        <p data-i18n="serv_desc" class="text-slate-600 dark:text-slate-400 text-sm md:text-base">نلبي كافة المتطلبات الدراسية والتقنية بدقة عالية وبإشراف نخبة من المتخصصين الأكاديميين.</p>
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
+        <span data-i18n="serv_tag" class="text-brand-blue dark:text-brand-cyan text-xs sm:text-sm font-bold uppercase tracking-wider">خدماتنا الشاملة</span>
+        <h2 data-i18n="serv_title" class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 dark:text-white">كل ما يحتاجه مسارك الجامعي في مكان واحد</h2>
+        <p data-i18n="serv_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base">نلبي كافة المتطلبات الدراسية والتقنية بدقة عالية وبإشراف نخبة من المتخصصين الأكاديميين.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
         
         <!-- Service 1: Graduation Projects -->
-        <div id="projects" class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-brand-cyan transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-cyan/20 to-brand-blue/20 text-brand-blue dark:text-brand-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div id="projects" class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-brand-cyan transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-brand-cyan/20 to-brand-blue/20 text-brand-blue dark:text-brand-cyan flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3 data-i18n="serv_proj_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-brand-blue dark:group-hover:text-brand-cyan transition-colors">مشاريع التخرج المتكاملة</h3>
+            <p data-i18n="serv_proj_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              من الفكرة حتى يوم المناقشة: اقتراح أفكار حصرية، بناء وتطوير الأنظمة والتطبيقات والمواقع، كتابة وتوثيق الكتاب كاملاً، وتصميم السلايدات.
+            </p>
           </div>
-          <h3 data-i18n="serv_proj_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-brand-blue dark:group-hover:text-brand-cyan transition-colors">مشاريع التخرج المتكاملة</h3>
-          <p data-i18n="serv_proj_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            من الفكرة حتى يوم المناقشة: اقتراح أفكار حصرية، بناء وتطوير الأنظمة والتطبيقات والمواقع، كتابة وتوثيق الكتاب كاملاً، وتصميم السلايدات.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue dark:text-brand-cyan"></i> <span data-i18n="serv_proj_item1">مشاريع برمجية وتقنية (Web, Mobile, AI, IoT)</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue dark:text-brand-cyan"></i> <span data-i18n="serv_proj_item2">مشاريع هندسية وإدارية ونظرية متكاملة</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue dark:text-brand-cyan"></i> <span data-i18n="serv_proj_item3">جلسات تدريب ومحاكاة لمناقشة المشروع مع الدكتور</span></li>
@@ -358,15 +372,17 @@
         </div>
 
         <!-- Service 2: Tutoring & Teaching -->
-        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-pink-500 transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pink-500/20 to-purple-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-chalkboard-user"></i>
+        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-pink-500 transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-pink-500/20 to-purple-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 data-i18n="serv_tut_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">التدريس والشروحات الجامعية</h3>
+            <p data-i18n="serv_tut_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              شرح وافٍ للمواد الصعبة والتخصصية (برمجة، رياضيات، إحصاء، شبكات، قواعد بيانات، مواد عامة) بأسلوب مبسط وتطبيقات عملية.
+            </p>
           </div>
-          <h3 data-i18n="serv_tut_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">التدريس والشروحات الجامعية</h3>
-          <p data-i18n="serv_tut_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            شرح وافٍ للمواد الصعبة والتخصصية (برمجة، رياضيات، إحصاء، شبكات، قواعد بيانات، مواد عامة) بأسلوب مبسط وتطبيقات عملية.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-600 dark:text-pink-400"></i> <span data-i18n="serv_tut_item1">مراجعات نهائية مكثفة قبل الاختبارات</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-600 dark:text-pink-400"></i> <span data-i18n="serv_tut_item2">حصص فردية ومجموعات طلابية مخصصة</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-600 dark:text-pink-400"></i> <span data-i18n="serv_tut_item3">شروحات أونلاين وحضور مباشر حسب رغبتك</span></li>
@@ -374,15 +390,17 @@
         </div>
 
         <!-- Service 3: Assignments & Tasks -->
-        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-blue-500 transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-list-check"></i>
+        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-blue-500 transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3 data-i18n="serv_task_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">حلول الأنشطة والتكاليف</h3>
+            <p data-i18n="serv_task_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              حلول نموذجية لكافة الواجبات والتمارين الجامعية مع شرح خطوة بخطوة لطريقة الحل ليفهمها الطالب ويضمن العلامة الكاملة.
+            </p>
           </div>
-          <h3 data-i18n="serv_task_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">حلول الأنشطة والتكاليف</h3>
-          <p data-i18n="serv_task_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            حلول نموذجية لكافة الواجبات والتمارين الجامعية مع شرح خطوة بخطوة لطريقة الحل ليفهمها الطالب ويضمن العلامة الكاملة.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400"></i> <span data-i18n="serv_task_item1">حلول فريدة ومخصصة تمنع التشابه بين الزملاء</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400"></i> <span data-i18n="serv_task_item2">تكاليف برمجية وهندسية ونظرية</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 dark:text-blue-400"></i> <span data-i18n="serv_task_item3">التزام تام بمواعيد التسليم المحددة (Deadlines)</span></li>
@@ -390,15 +408,17 @@
         </div>
 
         <!-- Service 4: Academic Research & Reports -->
-        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-emerald-500 transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-book-bookmark"></i>
+        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-emerald-500 transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <h3 data-i18n="serv_res_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">إعداد البحوث والأوراق العلمية</h3>
+            <p data-i18n="serv_res_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              كتابة أبحاث رصينة موثقة بالمراجع الأكاديمية الحديثة وفق أنظمة التوثيق العالمية (APA, IEEE, Harvard)، مع تدقيق وفحص الاستلال.
+            </p>
           </div>
-          <h3 data-i18n="serv_res_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">إعداد البحوث والأوراق العلمية</h3>
-          <p data-i18n="serv_res_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            كتابة أبحاث رصينة موثقة بالمراجع الأكاديمية الحديثة وفق أنظمة التوثيق العالمية (APA, IEEE, Harvard)، مع تدقيق وفحص الاستلال.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="serv_res_item1">تقرير رسمي لفحص نسبة الاستلال (Plagiarism Check)</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="serv_res_item2">تدقيق لغوي ونحوي وإملائي محترف</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="serv_res_item3">تنسيق متوافق مع دليل كتابة الرسائل بجامعتك</span></li>
@@ -406,15 +426,17 @@
         </div>
 
         <!-- Service 5: Presentations -->
-        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-amber-500 transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-chart-pie"></i>
+        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-amber-500 transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <h3 data-i18n="serv_pres_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">العروض التقديمية (PowerPoint)</h3>
+            <p data-i18n="serv_pres_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              تصميم سلايدات احترافية ملفتة للانتباه تلائم لجان المناقشة، مع تلخيص الأفكار بطريقة مرئية جذابة ومدعومة بالإنفوجرافيك.
+            </p>
           </div>
-          <h3 data-i18n="serv_pres_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">العروض التقديمية (PowerPoint)</h3>
-          <p data-i18n="serv_pres_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            تصميم سلايدات احترافية ملفتة للانتباه تلائم لجان المناقشة، مع تلخيص الأفكار بطريقة مرئية جذابة ومدعومة بالإنفوجرافيك.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 dark:text-amber-400"></i> <span data-i18n="serv_pres_item1">تصاميم مخصصة وهوية بصرية أنيقة</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 dark:text-amber-400"></i> <span data-i18n="serv_pres_item2">مخططات بيانية وإنفوجرافيك توضيحي</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600 dark:text-amber-400"></i> <span data-i18n="serv_pres_item3">تجهيز بطاقات ونقاط مساعدة للمتحدث</span></li>
@@ -422,15 +444,17 @@
         </div>
 
         <!-- Service 6: Academic Consulting & Proofreading -->
-        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-7 hover:border-purple-500 transition-all hover:-translate-y-1 shadow-md">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-user-graduate"></i>
+        <div class="group relative rounded-2xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-6 sm:p-7 hover:border-purple-500 transition-all hover:-translate-y-1 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3 data-i18n="serv_consult_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">الاستشارات الأكاديمية والتدقيق</h3>
+            <p data-i18n="serv_consult_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
+              توجيه علمي متخصص لاختيار مسار البحث أو فكرة المشروع، ومراجعة المحتوى والتدقيق اللغوي الأكاديمي لضمان الجودة والتميز.
+            </p>
           </div>
-          <h3 data-i18n="serv_consult_title" class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">الاستشارات الأكاديمية والتدقيق</h3>
-          <p data-i18n="serv_consult_desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            توجيه علمي متخصص لاختيار مسار البحث أو فكرة المشروع، ومراجعة المحتوى والتدقيق اللغوي الأكاديمي لضمان الجودة والتميز.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4">
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-brand-borderDark pt-4 mt-auto">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400"></i> <span data-i18n="serv_consult_item1">مساعدة في اختيار وصياغة عناوين المشاريع</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400"></i> <span data-i18n="serv_consult_item2">مراجعة شاملة للأوراق العلمية والتقارير</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600 dark:text-purple-400"></i> <span data-i18n="serv_consult_item3">استشارات وإرشاد أكاديمي مستمر</span></li>
@@ -442,46 +466,46 @@
     </div>
   </section>
 
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="py-16 bg-white dark:bg-brand-dark border-y border-slate-200 dark:border-brand-borderDark">
+  <!-- How It Works Section (Responsive 1-col mobile, 2-col tablet, 4-col desktop) -->
+  <section id="how-it-works" class="py-12 sm:py-16 bg-white dark:bg-brand-dark border-y border-slate-200 dark:border-brand-borderDark">
     <div class="container mx-auto px-4 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span data-i18n="how_tag" class="text-brand-blue dark:text-brand-cyan text-sm font-bold uppercase tracking-wider">خطوات بسيطة وسلسة</span>
-        <h2 data-i18n="how_title" class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">كيف نعمل معك لضمان تفوقك؟</h2>
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
+        <span data-i18n="how_tag" class="text-brand-blue dark:text-brand-cyan text-xs sm:text-sm font-bold uppercase tracking-wider">خطوات بسيطة وسلسة</span>
+        <h2 data-i18n="how_title" class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 dark:text-white">كيف نعمل معك لضمان تفوقك؟</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
         
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-brand-cyan/60 transition-colors shadow-sm">
-          <div class="w-12 h-12 rounded-full bg-brand-cyan/20 text-brand-blue dark:text-brand-cyan font-black text-lg flex items-center justify-center mx-auto mb-4 border border-brand-cyan/40">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-brand-cyan/60 transition-colors shadow-sm">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-brand-cyan/20 text-brand-blue dark:text-brand-cyan font-black text-base sm:text-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-brand-cyan/40">
             1
           </div>
-          <h4 data-i18n="step1_title" class="font-bold text-lg text-slate-900 dark:text-white mb-2">إرسال الطلب</h4>
+          <h4 data-i18n="step1_title" class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1.5 sm:mb-2">إرسال الطلب</h4>
           <p data-i18n="step1_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">تواصل معنا وأرسل ملفات المادة أو فكرة مشروعك أو تفاصيل التكليف.</p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-blue-500/60 transition-colors shadow-sm">
-          <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-600 dark:text-blue-400 font-black text-lg flex items-center justify-center mx-auto mb-4 border border-blue-500/40">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-blue-500/60 transition-colors shadow-sm">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 text-blue-600 dark:text-blue-400 font-black text-base sm:text-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-blue-500/40">
             2
           </div>
-          <h4 data-i18n="step2_title" class="font-bold text-lg text-slate-900 dark:text-white mb-2">الدراسة والاتفاق</h4>
+          <h4 data-i18n="step2_title" class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1.5 sm:mb-2">الدراسة والاتفاق</h4>
           <p data-i18n="step2_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">نحدد معك الوقت المناسب، ونرسم خطة التنفيذ خطوة بخطوة مع تحديد السعر الأنسب.</p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-purple-500/60 transition-colors shadow-sm">
-          <div class="w-12 h-12 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black text-lg flex items-center justify-center mx-auto mb-4 border border-purple-500/40">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-purple-500/60 transition-colors shadow-sm">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black text-base sm:text-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-purple-500/40">
             3
           </div>
-          <h4 data-i18n="step3_title" class="font-bold text-lg text-slate-900 dark:text-white mb-2">التنفيذ والمتابعة</h4>
+          <h4 data-i18n="step3_title" class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1.5 sm:mb-2">التنفيذ والمتابعة</h4>
           <p data-i18n="step3_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">نطلعك على التقدم أولاً بأول، مع تقديم شروحات لأي جزئية تحتاج فهماً أعمق.</p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-emerald-500/60 transition-colors shadow-sm">
-          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-black text-lg flex items-center justify-center mx-auto mb-4 border border-emerald-500/40">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark text-center hover:border-emerald-500/60 transition-colors shadow-sm">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-black text-base sm:text-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-emerald-500/40">
             4
           </div>
-          <h4 data-i18n="step4_title" class="font-bold text-lg text-slate-900 dark:text-white mb-2">التسليم والضمان</h4>
+          <h4 data-i18n="step4_title" class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1.5 sm:mb-2">التسليم والضمان</h4>
           <p data-i18n="step4_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">تسليم العمل في الموعد المحدد مع ضمان التعديلات المجانية حتى ترضى تماماً.</p>
         </div>
 
@@ -491,36 +515,36 @@
   </section>
 
   <!-- Interactive Order / WhatsApp Form -->
-  <section id="order-now" class="py-20 relative">
+  <section id="order-now" class="py-12 sm:py-16 md:py-20 relative">
     <div class="container mx-auto px-4 lg:px-8">
       
-      <div class="max-w-3xl mx-auto rounded-3xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-8 md:p-12 shadow-2xl relative overflow-hidden">
+      <div class="max-w-3xl mx-auto rounded-2xl sm:rounded-3xl bg-white dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-5 sm:p-8 md:p-12 shadow-2xl relative overflow-hidden">
         
-        <div class="text-center mb-8 space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-bold border border-emerald-500/20">
+        <div class="text-center mb-6 sm:mb-8 space-y-2">
+          <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-bold border border-emerald-500/20">
             <i class="fa-brands fa-whatsapp text-sm"></i> <span data-i18n="order_tag">خدمة مباشرة وسريعة</span>
           </div>
-          <h2 data-i18n="order_title" class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white">اطلب خدمتك أو استشارتك الأكاديمية الآن</h2>
-          <p data-i18n="order_desc" class="text-slate-600 dark:text-slate-400 text-sm">املأ البيانات بالأسفل وسيقوم النظام بتجهيز رسالة واتساب مفصلة لإرسالها مباشرة إلى رقم هاي تك.</p>
+          <h2 data-i18n="order_title" class="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-white">اطلب خدمتك أو استشارتك الأكاديمية الآن</h2>
+          <p data-i18n="order_desc" class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">املأ البيانات بالأسفل وسيقوم النظام بتجهيز رسالة واتساب مفصلة لإرسالها مباشرة إلى رقم هاي تك.</p>
         </div>
 
-        <form id="orderForm" class="space-y-5">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <form id="orderForm" class="space-y-4 sm:space-y-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             <div>
-              <label data-i18n="label_name" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">اسمك الكريم أو الكنية</label>
-              <input type="text" id="studentName" data-i18n-placeholder="placeholder_name" placeholder="مثال: أحمد محمد" required class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              <label data-i18n="label_name" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">اسمك الكريم أو الكنية</label>
+              <input type="text" id="studentName" data-i18n-placeholder="placeholder_name" placeholder="مثال: أحمد محمد" required class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
             </div>
 
             <div>
-              <label data-i18n="label_uni" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">الجامعة أو الكلية</label>
-              <input type="text" id="universityName" data-i18n-placeholder="placeholder_uni" placeholder="مثال: جامعة صنعاء / كلية الحاسوب" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              <label data-i18n="label_uni" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">الجامعة أو الكلية</label>
+              <input type="text" id="universityName" data-i18n-placeholder="placeholder_uni" placeholder="مثال: جامعة صنعاء / كلية الحاسوب" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             <div>
-              <label data-i18n="label_service" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">نوع الخدمة المطلوبة</label>
-              <select id="serviceType" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              <label data-i18n="label_service" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">نوع الخدمة المطلوبة</label>
+              <select id="serviceType" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
                 <option value="مشروع تخرج (برمجة أو توثيق كامل)" data-i18n-opt="opt_service_project">مشروع تخرج (برمجة أو توثيق كامل)</option>
                 <option value="تدريس وشرح مواد جامعية" data-i18n-opt="opt_service_tutoring">تدريس وشرح مواد جامعية</option>
                 <option value="حل أنشطة وواجبات وتكاليف" data-i18n-opt="opt_service_tasks">حل أنشطة وواجبات وتكاليف</option>
@@ -531,18 +555,18 @@
             </div>
 
             <div>
-              <label data-i18n="label_deadline" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">الموعد النهائي للتسليم (الديدلاين)</label>
-              <input type="text" id="deadline" data-i18n-placeholder="placeholder_deadline" placeholder="مثال: خلال يومين / الأسبوع القادم" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
+              <label data-i18n="label_deadline" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">الموعد النهائي للتسليم (الديدلاين)</label>
+              <input type="text" id="deadline" data-i18n-placeholder="placeholder_deadline" placeholder="مثال: خلال يومين / الأسبوع القادم" class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors">
             </div>
           </div>
 
           <div>
-            <label data-i18n="label_details" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">تفاصيل الطلب والمتطلبات</label>
-            <textarea id="orderDetails" rows="4" data-i18n-placeholder="placeholder_details" placeholder="اكتب تفاصيل المادة، عنوان المشروع، أو أي متطلبات خاصة..." required class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none"></textarea>
+            <label data-i18n="label_details" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">تفاصيل الطلب والمتطلبات</label>
+            <textarea id="orderDetails" rows="4" data-i18n-placeholder="placeholder_details" placeholder="اكتب تفاصيل المادة، عنوان المشروع، أو أي متطلبات خاصة..." required class="w-full bg-slate-50 dark:bg-brand-darker border border-slate-300 dark:border-brand-borderDark rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none"></textarea>
           </div>
 
-          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
+          <button type="submit" class="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all">
+            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
             <span data-i18n="btn_submit_order">إرسال الطلب عبر الواتساب فوراً</span>
           </button>
         </form>
@@ -553,52 +577,52 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-16 bg-white dark:bg-brand-dark border-t border-slate-200 dark:border-brand-borderDark">
+  <section id="faq" class="py-12 sm:py-16 bg-white dark:bg-brand-dark border-t border-slate-200 dark:border-brand-borderDark">
     <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
       
-      <div class="text-center mb-12 space-y-2">
-        <span data-i18n="faq_tag" class="text-brand-blue dark:text-brand-cyan text-sm font-bold uppercase tracking-wider">إجابات واضحة</span>
-        <h2 data-i18n="faq_title" class="text-3xl font-black text-slate-900 dark:text-white">الأسئلة الشائعة من الطلاب</h2>
+      <div class="text-center mb-8 sm:mb-12 space-y-2">
+        <span data-i18n="faq_tag" class="text-brand-blue dark:text-brand-cyan text-xs sm:text-sm font-bold uppercase tracking-wider">إجابات واضحة</span>
+        <h2 data-i18n="faq_title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">الأسئلة الشائعة من الطلاب</h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3 sm:space-y-4">
         
-        <details class="group rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-5 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200 list-none">
+        <details class="group rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-4 sm:p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 list-none">
             <span data-i18n="faq1_q">هل تساعدون الطالب في اختيار فكرة مشروع التخرج وصياغة الخطة؟</span>
             <i class="fa-solid fa-chevron-down text-brand-blue dark:text-brand-cyan transition-transform group-open:rotate-180"></i>
           </summary>
-          <p data-i18n="faq1_a" class="mt-4 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
+          <p data-i18n="faq1_a" class="mt-3 sm:mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
             نعم بالتأكيد! نقترح عليك مجموعة من الأفكار الحديثة والمبتكرة والمقبولة لدى جامعتك، ونساعدك في صياغة مقترح المشروع (Proposal) وتحديد المتطلبات بدقة.
           </p>
         </details>
 
-        <details class="group rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-5 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200 list-none">
+        <details class="group rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-4 sm:p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 list-none">
             <span data-i18n="faq2_q">هل يتضمن مشروع التخرج شرحاً وتدريباً على الكود والمناقشة؟</span>
             <i class="fa-solid fa-chevron-down text-brand-blue dark:text-brand-cyan transition-transform group-open:rotate-180"></i>
           </summary>
-          <p data-i18n="faq2_a" class="mt-4 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
+          <p data-i18n="faq2_a" class="mt-3 sm:mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
             نعم بالتأكيد! نحن لا نسلمك المشروع كملف مغلق فحسب، بل نعقد معك جلسات مخصصة لشرح الكود والتوثيق خطوة بخطوة، مع محاكاة أسئلة المناقشة المتوقعة لتدخل أمام اللجنة بكامل الثقة.
           </p>
         </details>
 
-        <details class="group rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-5 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200 list-none">
+        <details class="group rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-4 sm:p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 list-none">
             <span data-i18n="faq3_q">ماذا لو طلب دكتور المادة أو المشرف تعديلات بعد التسليم؟</span>
             <i class="fa-solid fa-chevron-down text-brand-blue dark:text-brand-cyan transition-transform group-open:rotate-180"></i>
           </summary>
-          <p data-i18n="faq3_a" class="mt-4 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
+          <p data-i18n="faq3_a" class="mt-3 sm:mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
             التعديلات المتعلقة بصلب المتطلبات المتفق عليها مجانية بالكامل ومستمرة معك حتى تقييم العمل واعتماده رسمياً.
           </p>
         </details>
 
-        <details class="group rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-5 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-800 dark:text-slate-200 list-none">
+        <details class="group rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-brand-cardDark border border-slate-200 dark:border-brand-borderDark p-4 sm:p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 list-none">
             <span data-i18n="faq4_q">كيف تضمنون عدم تشابه حلول الأنشطة بين الزملاء؟</span>
             <i class="fa-solid fa-chevron-down text-brand-blue dark:text-brand-cyan transition-transform group-open:rotate-180"></i>
           </summary>
-          <p data-i18n="faq4_a" class="mt-4 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
+          <p data-i18n="faq4_a" class="mt-3 sm:mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-brand-borderDark/60 pt-3">
             كل تكليف يُحل بطريقة وصياغة برمجية أو لغوية مستقلة، ونحرص دائماً على عدم تكرار نماذج الحل بين الطلاب لتجنب أي ملاحظات من الأساتذة.
           </p>
         </details>
@@ -609,20 +633,20 @@
   </section>
 
   <!-- Footer -->
-  <footer id="contact" class="bg-slate-100 dark:bg-brand-darker border-t border-slate-200 dark:border-brand-borderDark pt-12 pb-8">
+  <footer id="contact" class="bg-slate-100 dark:bg-brand-darker border-t border-slate-200 dark:border-brand-borderDark pt-10 sm:pt-12 pb-6 sm:pb-8">
     <div class="container mx-auto px-4 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
         
-        <div class="space-y-4 md:col-span-2">
+        <div class="space-y-3 sm:space-y-4 sm:col-span-2">
           <div class="flex items-center gap-3">
-            <img src="assets/images/logo_v1.jpg" alt="Logo" class="w-10 h-10 rounded-xl object-cover border border-brand-cyan/40">
-            <span data-i18n="footer_about_title" class="text-xl font-black text-slate-900 dark:text-white">مركز هاي تك | Hi Tech</span>
+            <img src="assets/images/logo_v1.jpg" alt="Logo" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 rounded-xl object-cover border border-brand-cyan/40">
+            <span data-i18n="footer_about_title" class="text-lg sm:text-xl font-black text-slate-900 dark:text-white">مركز هاي تك | Hi Tech</span>
           </div>
           <p data-i18n="footer_about_desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
             المركز الرائد لتقديم الخدمات الطلابية والجامعية: التدريس الأكاديمي، تطوير وتوثيق مشاريع التخرج، وحلول الأنشطة والواجبات بدقة واحترافية.
           </p>
-          <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-base pt-2">
+          <div class="flex items-center gap-2.5 sm:gap-3 text-slate-500 dark:text-slate-400 text-base pt-2">
             <a href="https://wa.me/972598383944" target="_blank" class="w-9 h-9 rounded-lg bg-white dark:bg-brand-cardDark hover:bg-brand-cyan hover:text-brand-darker flex items-center justify-center transition-colors shadow-sm" title="واتساب"><i class="fa-brands fa-whatsapp text-emerald-500"></i></a>
             <a href="#" class="w-9 h-9 rounded-lg bg-white dark:bg-brand-cardDark hover:bg-brand-cyan hover:text-brand-darker flex items-center justify-center transition-colors shadow-sm"><i class="fa-brands fa-telegram text-sky-500"></i></a>
             <a href="#" class="w-9 h-9 rounded-lg bg-white dark:bg-brand-cardDark hover:bg-brand-cyan hover:text-brand-darker flex items-center justify-center transition-colors shadow-sm"><i class="fa-brands fa-facebook-f text-blue-600"></i></a>
@@ -631,7 +655,7 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer_quick_links" class="font-bold text-sm text-slate-900 dark:text-white mb-4 border-r-2 rtl:border-r-2 ltr:border-l-2 border-brand-cyan pr-2 ltr:pl-2">روابط سريعة</h4>
+          <h4 data-i18n="footer_quick_links" class="font-bold text-sm text-slate-900 dark:text-white mb-3 sm:mb-4 border-r-2 rtl:border-r-2 ltr:border-l-2 border-brand-cyan pr-2 ltr:pl-2">روابط سريعة</h4>
           <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <li><a href="#projects" data-i18n="nav_projects" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors">مشاريع التخرج</a></li>
             <li><a href="#services" data-i18n="nav_services" class="hover:text-brand-blue dark:hover:text-brand-cyan transition-colors">خدماتنا والتدريس</a></li>
@@ -642,8 +666,8 @@
         </div>
 
         <div>
-          <h4 data-i18n="footer_contact_title" class="font-bold text-sm text-slate-900 dark:text-white mb-4 border-r-2 rtl:border-r-2 ltr:border-l-2 border-purple-500 pr-2 ltr:pl-2">تواصل معنا</h4>
-          <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+          <h4 data-i18n="footer_contact_title" class="font-bold text-sm text-slate-900 dark:text-white mb-3 sm:mb-4 border-r-2 rtl:border-r-2 ltr:border-l-2 border-purple-500 pr-2 ltr:pl-2">تواصل معنا</h4>
+          <ul class="space-y-2.5 sm:space-y-3 text-xs text-slate-600 dark:text-slate-400">
             <li class="flex items-center gap-2">
               <i class="fa-solid fa-location-dot text-brand-blue dark:text-brand-cyan"></i>
               <span data-i18n="footer_location">بالقرب من البوابات الجامعية الرئيسية</span>
@@ -663,7 +687,7 @@
 
       </div>
 
-      <div class="border-t border-slate-200 dark:border-brand-borderDark/60 pt-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="border-t border-slate-200 dark:border-brand-borderDark/60 pt-5 sm:pt-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p data-i18n="footer_copyright">© 2026 هاي تك (Hi Tech). جميع الحقوق محفوظة.</p>
         <p data-i18n="footer_made_with" class="text-slate-500 dark:text-slate-400">صُمم وطُوّر بحب لخدمة طلابنا الأعزاء 🎓</p>
       </div>
@@ -671,8 +695,8 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/972598383944" target="_blank" class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/30 hover:scale-110 transition-all" data-i18n-title="float_wa_title" title="تواصل مباشر عبر الواتساب">
+  <!-- Floating WhatsApp Action Button (Responsive positioning & pulse effect) -->
+  <a href="https://wa.me/972598383944" target="_blank" aria-label="WhatsApp Contact" class="fixed bottom-5 sm:bottom-6 rtl:left-5 rtl:right-auto ltr:right-5 ltr:left-auto sm:rtl:left-6 sm:ltr:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center text-xl sm:text-2xl shadow-xl shadow-emerald-500/35 hover:scale-110 transition-all wa-pulse" data-i18n-title="float_wa_title" title="تواصل مباشر عبر الواتساب">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
